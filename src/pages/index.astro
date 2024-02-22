@@ -1,0 +1,55 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Cart from '../components/cart.astro'
+import Menu from '../components/menu.astro'
+---
+
+<Layout title="Home / X">
+	<div class="app mx-auto">
+		<header class="[grid-area:nav]">
+			<Menu/>
+		</header>
+
+		<main class="[grid-area:main] ">
+			<Cart/>
+			<Cart/>
+			<Cart/>
+		</main>
+
+		<aside class="[grid-area:aside]  hidden md:block">
+			<Cart/>
+			<Cart/>
+			<Cart/>
+		</aside>
+	</div>
+</Layout>
+
+<style>
+	.app {
+		display: grid;
+		grid-template-areas: "nav main aside";
+		grid-template-columns: 80px minmax(200px, 1fr);
+		grid-template-rows: 100vh;
+	}
+
+	header,
+	main,
+	aside{
+		overflow-y:scroll ;
+		overflow-x: hidden;
+		scrollbar-color: black gray;
+	}
+
+	main,
+	aside{
+		scrollbar-width: none;
+	}
+
+	@media (width > 766px){
+		.app {
+			display: grid;
+			grid-template-areas: "nav main aside";
+			grid-template-columns: minmax(100px, 290px) 640px 1fr;
+		}
+	}
+</style>
