@@ -1,0 +1,31 @@
+---
+import ProfilePuntos from '../icons/profilePuntos.astro'
+
+interface Props {
+    titulo : string
+    parrafo : string 
+    fecha : string
+    alt? : string 
+    src? : string 
+
+}
+
+const {titulo , parrafo, fecha, alt , src } = Astro.props
+---
+<article class="flex relative p-4 hover:bg-[#2d2e2e] transition-colors cursor-pointer overflow-hidden">
+    <div>
+        <h4 class="text-base font-bold">{titulo}</h4>
+        <span class="text-sm text-[#71767b] text-pretty">{parrafo}</span><br>
+        <span class="text-xs text-[#71767b] text-pretty">{fecha}</span>
+    </div>
+    { src === undefined?
+        <ProfilePuntos class = "w-7 p-1 fill-current absolute rounded-full right-2 hover:bg-[#1d9bf0] transition-colors"/>:
+        <picture>
+            <img 
+            alt={alt} 
+            src={src}
+            class="rounded-xl size-20 object-cover hidden lg:block"/>
+        </picture>
+    }
+</article>
+

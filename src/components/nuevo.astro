@@ -1,0 +1,41 @@
+---
+import ContainerAside from "./containerAside.astro"
+import NuevoPost from '../components/nuevoPost.astro'
+---
+
+<ContainerAside>
+    <h3 class="font-bold text-xl mb-2 px-4">What's happening</h3>
+    <NuevoPost 
+        titulo = {"Super Bowl LVIII: 49ers at Chiefs"}
+        parrafo = {"Super Bowl LVIII · February 11, 2024"}
+        fecha={"25-04-2024"}
+        src={"./img/promo.jpg"}
+        alt="promocional"
+    />
+
+
+    <NuevoPost 
+        titulo = {"RefisalNuevaImagen"}
+        parrafo = {"De mamá heredaste sus ojos y también los truquitos de la cocina."}
+        fecha={"Promoted by Refisal"}
+
+    />  
+
+
+    <NuevoPost 
+        titulo = {"Trending in Colombia"}
+        parrafo = {"Iphone"}
+        fecha={"2175K posts"}
+
+    />
+    
+    
+    
+    <NuevoPost 
+        titulo = {"STrending in Colombia"}
+        parrafo = {"Linda Caicedo"}
+        fecha={"1,326 posts"}
+
+    />
+    <a href="#" class="block h-12 px-4 py-3 text-[#1d9bf0] mt-3 hover:bg-[#2d2e2e] transition-colors cursor-pointer overflow-hidden">Show More</a>
+</ContainerAside>

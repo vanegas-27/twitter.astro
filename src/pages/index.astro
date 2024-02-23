@@ -2,6 +2,12 @@
 import Layout from '../layouts/Layout.astro'
 import Cart from '../components/cart.astro'
 import Menu from '../components/menu.astro'
+import NavHome from '../components/navHome.astro'
+import SearHome from '../components/SearHome.astro'
+import SearchAside from '../components/searchAside.astro'
+import Suscibete from '../components/suscribete.astro'
+import Nuevo from '../components/nuevo.astro'
+import Follow from '../components/follow.astro'
 ---
 
 <Layout title="Home / X">
@@ -10,16 +16,18 @@ import Menu from '../components/menu.astro'
 			<Menu/>
 		</header>
 
-		<main class="[grid-area:main] ">
-			<Cart/>
+		<main class="[grid-area:main] relative border-r-[1px] border-gray-700">
+			<NavHome/>
+			<SearHome/>
 			<Cart/>
 			<Cart/>
 		</main>
 
 		<aside class="[grid-area:aside]  hidden md:block">
-			<Cart/>
-			<Cart/>
-			<Cart/>
+			<SearchAside/>
+			<Suscibete/>
+			<Nuevo/>
+			<Follow/>
 		</aside>
 	</div>
 </Layout>
@@ -31,13 +39,29 @@ import Menu from '../components/menu.astro'
 		grid-template-columns: 80px minmax(200px, 1fr);
 		grid-template-rows: 100vh;
 	}
+	
+	@media (width > 766px){
+		.app {
+			display: grid;
+			grid-template-areas: "nav main aside";
+			grid-template-columns: minmax(100px, 290px) 2fr 1fr;
+		}
+	}
+
 
 	header,
 	main,
 	aside{
 		overflow-y:scroll ;
 		overflow-x: hidden;
-		scrollbar-color: black gray;
+
+		&::-webkit-scrollbar{
+			background-color: transparent;
+		}
+
+		&::-webkit-scrollbar-thumb{
+			background-color : rgb(17, 17, 17);
+		}
 	}
 
 	main,
@@ -45,11 +69,5 @@ import Menu from '../components/menu.astro'
 		scrollbar-width: none;
 	}
 
-	@media (width > 766px){
-		.app {
-			display: grid;
-			grid-template-areas: "nav main aside";
-			grid-template-columns: minmax(100px, 290px) 640px 1fr;
-		}
-	}
+
 </style>

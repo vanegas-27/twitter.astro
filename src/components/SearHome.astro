@@ -1,0 +1,21 @@
+---
+import GifHome from "../icons/gifHome.twitter.astro"
+import ImgHome from "../icons/imgHome.twitter.astro"
+import Posthome from "../icons/postHome.twitter.astro"
+---
+
+
+<section class="flex py-3 px-4 justify-between border-b-[1px] border-[#71767b] mb-2">
+    <picture>
+        <img 
+        alt="Dev.vanegas" 
+        src="https://pbs.twimg.com/profile_images/1672062860514451461/cXmQUNdU_normal.jpg"
+        class="rounded-full mr-2.5 w-10"/>
+    </picture>
+    <input type="text" placeholder="What is happening?!" class="rounded-full px-3 py-1 w-[80%] mx-3 text-[#71767b] bg-transparent border-[1px] border-[#71767b]">
+    <div class="flex gap-3">
+        <GifHome class="w-6 fill-current text-[#1d9bf0]"/>
+        <ImgHome class="w-6 fill-current text-[#1d9bf0]"/>
+        <Posthome class="w-6 fill-current text-[#1d9bf0]"/>
+    </div>
+</section>
