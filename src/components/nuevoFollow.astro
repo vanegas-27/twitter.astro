@@ -1,4 +1,5 @@
 ---
+import Check from '../icons/check.astro'
 interface Props {
     img:string
     nombre: string
@@ -10,11 +11,11 @@ const {img, nombre, hash} = Astro.props
 
 <article class="flex hover:bg-[#2d2e2e] px-4 py-2 cursor-pointer">
     <picture class="hidden lg:block">
-        <img src="./img/promo.jpg" alt=`usuario ${nombre}` class="w-14 h-14 object-cover rounded-full">
+        <img src={img} alt=`usuario ${nombre}` class="w-14 h-14 object-cover rounded-full">
     </picture>
     <div class="w-[50%] px-2">
-        <h5>Ars Technica<span>⭐</span></h5>
-        <span>@arstechica</span>
+        <h5>{nombre}<span> <Check class="w-5 inline text-[#1d9bf0]"/></span></h5>
+        <span class="text-[#71767b]">{hash}</span>
     </div>
     <button class="bg-white text-black text-base h-8 w-24 rounded-full">Follow</button>
 </article>

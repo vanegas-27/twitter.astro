@@ -1,0 +1,38 @@
+---
+import Check from "../icons/check.astro"
+import ProfilePuntos from '../icons/profilePuntos.astro'
+
+interface Props {
+    img: string
+    nombre: string
+    hash: string
+    parrafo: string
+    imgPost? : string
+    hora? : string 
+}
+
+const { img, nombre, hash, parrafo, imgPost, hora } = Astro.props
+---
+
+<article class="flex text-white border-b-[1px] border-[#2d2e2e] px-4 py-2">
+    <picture class="w-[50px]">
+        <img src={img} alt=`foto, perfil de ${nombre}` class=" w-10 h-10 object-cover rounded-full">
+    </picture>
+
+    <div class="w-[100%] pr-2">
+        <div class="flex">
+            <h3 class="font-bold ">{nombre} <Check class="w-5 inline text-[#1d9bf0]"/> <span class="text-sm text-[#71767b]">{hash} . <i>{hora?`${hora}h`:"now"}</i></span></h3>
+            <ProfilePuntos class = "w-7 p-1 fill-current absolute rounded-full right-2 hover:bg-[#1d9bf0] transition-colors"/>
+        </div>
+         
+        <pre class="text-wrap font-sans">{parrafo}</pre>
+
+        { imgPost === undefined?"":
+            <picture>
+                <img src={imgPost} class="mt-2 rounded-3xl border-[1px] border-[#2d2e2e]">
+            </picture>
+        }
+    </div>
+
+
+</article>
